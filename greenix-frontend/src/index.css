@@ -1,0 +1,94 @@
+@import "tailwindcss";
+@font-face {
+  font-family: 'BrunoAce';
+  src: url('./assets/fonts/BrunoAce-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+.font-bruno {
+  font-family: 'BrunoAce', sans-serif;
+}
+
+@font-face {
+  font-family: 'RobotoMono';
+  src: url('./assets/fonts/RobotoMono-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+.font-roboto-mono {
+  font-family: 'RobotoMono', monospace;
+}
+
+/* Keyframes & animation utilities */
+@keyframes float-slow1 {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-7px); }
+  100% { transform: translateY(0); }
+}
+.animate-float-slow1 { animation: float-slow1 6s ease-in-out infinite; }
+
+/* subtle float animations used by MedalPopup */
+@keyframes float-slow {
+  0% { transform: translate3d(0,0,0) rotate(0); opacity: 0.95; }
+  50% { transform: translate3d(6px,-10px,0) rotate(6deg); opacity: 1; }
+  100% { transform: translate3d(0,0,0) rotate(0); opacity: 0.95; }
+}
+@keyframes float-medium {
+  0% { transform: translate3d(0,0,0) rotate(0); opacity: 0.95; }
+  50% { transform: translate3d(-8px,-14px,0) rotate(-4deg); opacity: 1; }
+  100% { transform: translate3d(0,0,0) rotate(0); opacity: 0.95; }
+}
+@keyframes float-fast {
+  0% { transform: translate3d(0,0,0) rotate(0); opacity: 0.95; }
+  50% { transform: translate3d(10px,-20px,0) rotate(10deg); opacity: 1; }
+  100% { transform: translate3d(0,0,0) rotate(0); opacity: 0.95; }
+}
+
+/* animation utility classes */
+.animate-float-slow { animation: float-slow 4.6s ease-in-out infinite; will-change: transform, opacity; }
+.animate-float-medium { animation: float-medium 3.8s ease-in-out infinite; will-change: transform, opacity; }
+.animate-float-fast { animation: float-fast 2.6s ease-in-out infinite; will-change: transform, opacity; }
+
+/* medal pulse */
+@keyframes medal-pulse {
+  0% { transform: scale(1); filter: drop-shadow(0 6px 10px rgba(0,0,0,0.12)); }
+  50% { transform: scale(1.04); filter: drop-shadow(0 12px 26px rgba(0,0,0,0.18)); }
+  100% { transform: scale(1); filter: drop-shadow(0 6px 10px rgba(0,0,0,0.12)); }
+}
+.animate-medal-pulse { animation: medal-pulse 1.6s ease-in-out infinite; will-change: transform, filter; }
+
+/* small helper to slightly increase modal contrast on backdrop */
+.backdrop-blur-sm { backdrop-filter: blur(4px); }
+
+/* Accessibility: respect user preference for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .animate-float-slow,
+  .animate-float-medium,
+  .animate-float-fast,
+  .animate-medal-pulse,
+  *[class*="animate-"] {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+html.lenis {
+  height: auto; /* allow Lenis to manage scroll height */
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto; /* turn off native smooth behavior while Lenis active */
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden; /* when Lenis intentionally stops scroll */
+}
+
+html, body, #root {
+  height: auto;
+  min-height: 100%;
+  scroll-behavior: initial;
+}
