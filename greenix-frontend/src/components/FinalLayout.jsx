@@ -10,7 +10,6 @@ import rocketFeature from "../assets/Rocket_Launch_Video_Generation.mp4";
 import bottom from "../assets/shape bottom.png";
 import top from "../assets/shape top (1).png";
 import topHeading from "../assets/TOP (3).png";
-
 // ← NEW: import the Weather + AQI card component
 import WeatherAQI from "./WeatherAQI";
 
@@ -39,9 +38,7 @@ export default function FinalLayout() {
     },
     {
       src: chatbotFeature,
-      link:
-        "https://cdn.botpress.cloud/webchat/v3.2/shareable.html?configUrl=https://files.bpcontent.cloud/2025/09/06/19/20250906190158-R5CQ65V1.json",
-      type: "external",
+      link:"eco",
       title: "EcoBot",
       desc: "Chat with our AI EcoBot.",
     },

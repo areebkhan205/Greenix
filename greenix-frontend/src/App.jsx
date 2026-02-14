@@ -22,6 +22,7 @@ import RecycleYellowImg from "./assets/recycle-yellow.png";
 import SproutImg from "./assets/sprout.png";
 import WaterImg from "./assets/water-drop.png";
 import WindImg from "./assets/wind-turbine.png";
+import EcoBot from "./components/EcoBot";
 import FinalLayout from "./components/FinalLayout";
 import Leaderboard from "./components/Leaderboard";
 import Lenisscroll from "./components/Lenisscroll";
@@ -29,7 +30,6 @@ import Profile1 from "./components/Profile1";
 import ProfileSetupPage from "./components/ProfileSetupPage";
 import ProtectedRoute from "./components/ProtectedRoute";
 import SaviourEntry from "./components/SaviourEntry";
-
 const ecoLogos = [
   { src: SunImg, title: "Solar", color: "#facc15" },
   { src: WaterImg, title: "Clean Water", color: "#0284c7" },
@@ -51,7 +51,8 @@ export default function App() {
     location.pathname === "/signup" ||
     location.pathname === "/entry"||
     location.pathname === "/saviour"||
-    location.pathname === "/profile1";
+    location.pathname === "/profile1" ||
+      location.pathname === "/eco";
 
   return (
     <div className="flex min-h-screen flex-col bg-gradient-to-b from-white to-green-50">
@@ -121,7 +122,7 @@ export default function App() {
 
           <Route path="/quiz" element={<EntryPage />} />
           <Route path="/signup" element={<SignupPage />} />
-          
+          <Route path="/eco" element={<EcoBot/>}/>          
          <Route
   path="/profile-setup"
   element={
