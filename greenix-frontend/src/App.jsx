@@ -5,12 +5,10 @@ import "./index.css"; // ensure this imports the CSS with lenis fixes
 import EntryPage from "./components/EntryPage";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
-import HeroSection from "./components/HeroSection";
 import LoginPage from "./components/LoginPage";
 import LogoLoop from "./components/LogoLoop";
 import SignupPage from "./components/SignupPage";
 
-import ContactCard from "./components/ContactCard";
 import FAQ from "./components/Faq";
 
 import NoPlasticImg from "./assets/no-plastic.png";
@@ -24,6 +22,7 @@ import WaterImg from "./assets/water-drop.png";
 import WindImg from "./assets/wind-turbine.png";
 import EcoBot from "./components/EcoBot";
 import FinalLayout from "./components/FinalLayout";
+import HOMEPAGE from "./components/HOMEPAGE";
 import Leaderboard from "./components/Leaderboard";
 import Lenisscroll from "./components/Lenisscroll";
 import Profile1 from "./components/Profile1";
@@ -65,10 +64,10 @@ export default function App() {
             path="/"
             element={
               <>
-                <HeroSection />
+              <HOMEPAGE/>
                 <FinalLayout />
                 <FAQ />
-                <ContactCard />
+               
 
                 {/* Eco LogoLoop — full width */}
                 <section
@@ -133,7 +132,7 @@ export default function App() {
 />
 
           <Route path="/log" element={<LoginPage />} />
-          <Route path="/main" element={<HeroSection />} />
+          <Route path="/main" element={<HOMEPAGE />} />
            <Route path="/lead" element={<Leaderboard/>} />
            <Route path="/saviour" element={<SaviourEntry/>} />
           <Route path="/entry" element={<EntryPage />} />
