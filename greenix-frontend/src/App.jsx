@@ -4,8 +4,7 @@ import "./index.css"; // ensure this imports the CSS with lenis fixes
 
 import EntryPage from "./components/EntryPage";
 import Footer from "./components/Footer";
-import Header from "./components/Header";
-import LoginPage from "./components/LoginPage";
+
 import LogoLoop from "./components/LogoLoop";
 import SignupPage from "./components/SignupPage";
 
@@ -25,9 +24,8 @@ import FinalLayout from "./components/FinalLayout";
 import HOMEPAGE from "./components/HOMEPAGE";
 import Leaderboard from "./components/Leaderboard";
 import Lenisscroll from "./components/Lenisscroll";
-import Profile1 from "./components/Profile1";
-import ProfileSetupPage from "./components/ProfileSetupPage";
-import ProtectedRoute from "./components/ProtectedRoute";
+
+
 import SaviourEntry from "./components/SaviourEntry";
 const ecoLogos = [
   { src: SunImg, title: "Solar", color: "#facc15" },
@@ -50,12 +48,11 @@ export default function App() {
     location.pathname === "/signup" ||
     location.pathname === "/entry"||
     location.pathname === "/saviour"||
-    location.pathname === "/profile1" ||
       location.pathname === "/eco";
 
   return (
     <div className="flex min-h-screen flex-col bg-gradient-to-b from-white to-green-50">
-      {!hideLayout && <Header />}
+      
 
       <main className="flex-grow">
         <Lenisscroll />
@@ -124,19 +121,14 @@ export default function App() {
           <Route path="/eco" element={<EcoBot/>}/>          
          <Route
   path="/profile-setup"
-  element={
-    <ProtectedRoute>
-      <ProfileSetupPage />
-    </ProtectedRoute>
-  }
+
 />
 
-          <Route path="/log" element={<LoginPage />} />
           <Route path="/main" element={<HOMEPAGE />} />
            <Route path="/lead" element={<Leaderboard/>} />
            <Route path="/saviour" element={<SaviourEntry/>} />
           <Route path="/entry" element={<EntryPage />} />
-          <Route path="/profile1" element={<Profile1/>}/>
+
         </Routes>
       </main>
 

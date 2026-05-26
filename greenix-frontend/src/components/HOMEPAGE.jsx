@@ -6,13 +6,24 @@ import {
   X,
 } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
-
+import {
+  useNavigate
+} from "react-router-dom";
 import "../font.css";
 import "../theme.css";
+
+
 
 export default function HomePage() {
   const videoRef = useRef(null);
 
+
+  const navigate=useNavigate();
+const handleBegin = () => {
+
+  navigate("/signup");
+
+};
   const [videoOpacity, setVideoOpacity] = useState(0);
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] =
@@ -72,7 +83,7 @@ export default function HomePage() {
     }, 3000);
   };
 
-  const handleBeginJourney = () => {
+  const handle = () => {
     triggerToast("Welcome to Greenix 🌱");
   };
 
@@ -139,7 +150,7 @@ export default function HomePage() {
 
           {/* Desktop CTA */}
           <button
-            onClick={handleBeginJourney}
+            onClick={handleBegin}
             className="hidden md:flex items-center gap-2 rounded-full bg-black px-6 py-3 text-sm text-white transition hover:scale-105"
           >
             Begin Journey
@@ -177,7 +188,7 @@ export default function HomePage() {
             <a href="#">Contact</a>
 
             <button
-              onClick={handleBeginJourney}
+              onClick={handleBegin}
               className="mt-3 rounded-full bg-black py-3 text-white"
             >
               Begin Journey
@@ -236,7 +247,7 @@ export default function HomePage() {
 
           {/* CTA */}
           <button
-            onClick={handleBeginJourney}
+            onClick={handleBegin}
             className="animate-fade-rise-delay-2 mt-12 inline-flex items-center gap-3 rounded-full bg-black px-10 py-5 font-inter text-white transition hover:scale-105"
           >
             Begin Journey
